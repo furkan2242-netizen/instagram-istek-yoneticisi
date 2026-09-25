@@ -1,0 +1,23 @@
+<!doctype html><html lang="tr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="İstekler"><meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.webmanifest"><title>Instagram İstek Yöneticisi</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;background:#f4f5f7;color:#111;padding-bottom:110px}
+header{position:sticky;top:0;z-index:3;background:#ffffffee;backdrop-filter:blur(14px);padding:calc(12px + env(safe-area-inset-top)) 16px 12px;border-bottom:1px solid #ddd}
+h1{font-size:21px;margin:0 0 7px} #summary{font-size:13px;color:#555;line-height:1.5}
+main{padding:14px;max-width:760px;margin:auto}.panel,.item{background:#fff;border-radius:15px;padding:14px;margin-bottom:10px;box-shadow:0 1px 5px #0000000d}
+.panel h2{font-size:18px;margin:0 0 5px}.muted{font-size:13px;color:#666}.item.done{opacity:.48}.who{display:flex;gap:8px;align-items:center;min-width:0}.who strong{overflow:hidden;text-overflow:ellipsis}.num{font-size:12px;color:#777;min-width:48px}
+.actions{display:flex;gap:8px;margin-top:12px}.actions a,.actions button,.nav button{flex:1;border:0;border-radius:11px;padding:12px 8px;text-align:center;font-weight:650;font-size:14px;text-decoration:none}
+.open{background:#111;color:#fff}.actions button,.nav button{background:#e9eaed;color:#111}.actions button:disabled{color:#777}
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:4;background:#ffffffef;backdrop-filter:blur(14px);border-top:1px solid #ddd;padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px}
+.nav button:disabled{opacity:.35}.danger{margin-top:8px;border:0;background:none;color:#a00;padding:8px 0}
+.note{font-size:12px;color:#666;line-height:1.45}
+</style></head><body>
+<header><h1>Instagram İstek Yöneticisi</h1><div id="summary"></div></header>
+<main><section class="panel"><h2 id="batchTitle"></h2><div id="batchStat" class="muted"></div>
+<p class="note">Her ekranda 100 hesap gösterilir. “Instagram'da Aç” ile profili aç; işlemi Instagram'da yaptıktan sonra geri dönüp “Tamamlandı”ya dokun. Instagram işlem kısıtlaması gösterirse dur.</p>
+<button class="danger" onclick="resetProgress()">İlerlemeyi sıfırla</button></section><div id="list"></div></main>
+<div class="nav"><button id="prev" onclick="prevBatch()">← Önceki 100</button><button id="next" onclick="nextBatch()">Sonraki 100 →</button></div>
+<script src="app.js"></script></body></html>
